@@ -14,6 +14,7 @@ try {
 
 import { CloudService } from "@roo-code/cloud"
 import { TelemetryService, PostHogTelemetryClient } from "@roo-code/telemetry"
+import { setupProxy } from "./utils/proxy"
 
 import "./utils/path" // Necessary to have access to String.prototype.toPosix.
 import { createOutputChannelLogger, createDualLogger } from "./utils/outputChannelLogger"
@@ -61,6 +62,10 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	// Migrate old settings to new
 	await migrateSettings(context, outputChannel)
+
+	// Configure proxy settings before initializing network services
+	const proxyUrl = vscode.workspace.getConfiguration(Package.name).get<string>("proxyUrl")
+	setupProxy(proxyUrl)
 
 	// Initialize telemetry service.
 	const telemetryService = TelemetryService.createInstance()
