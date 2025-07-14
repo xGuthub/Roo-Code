@@ -61,6 +61,7 @@ export const globalSettingsSchema = z.object({
 	remoteBrowserEnabled: z.boolean().optional(),
 	remoteBrowserHost: z.string().optional(),
 	cachedChromeHostUrl: z.string().optional(),
+	proxyUrl: z.string().optional(),
 
 	enableCheckpoints: z.boolean().optional(),
 
