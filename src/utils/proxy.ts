@@ -1,7 +1,6 @@
 import axios from "axios"
 import * as vscode from "vscode"
-import { setGlobalDispatcher } from "undici"
-import { ProxyAgent } from "proxy-agent"
+import { setGlobalDispatcher, ProxyAgent } from "undici"
 
 import { Package } from "../shared/package"
 
