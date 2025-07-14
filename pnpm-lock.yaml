@@ -702,6 +702,9 @@ importers:
       proper-lockfile:
         specifier: ^4.1.2
         version: 4.1.2
+      proxy-agent:
+        specifier: ^6.5.0
+        version: 6.5.0
       ps-tree:
         specifier: ^1.2.0
         version: 1.2.0
