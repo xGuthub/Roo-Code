@@ -66,6 +66,15 @@ export async function activate(context: vscode.ExtensionContext) {
 	// Configure proxy settings before initializing network services.
 	const proxyUrl = vscode.workspace.getConfiguration(Package.name).get<string>("proxyUrl")
 	setupProxy(proxyUrl)
+	
+	const proxyDisposable = vscode.workspace.onDidChangeConfiguration(async (e) => {
+		if (e.affectsConfiguration(`${Package.name}.proxyUrl`)) {
+			const url = vscode.workspace.getConfiguration(Package.name).get<string>("proxyUrl")
+			setupProxy(url)
+			await ContextProxy.instance.setValues({ proxyUrl: url || undefined })
+		}
+	})
+	context.subscriptions.push(proxyDisposable)
 
 	// Initialize telemetry service.
 	const telemetryService = TelemetryService.createInstance()
