@@ -3,5 +3,6 @@
 	"views.contextMenu.label": "Roo Code Nightly",
 	"views.terminalMenu.label": "Roo Code Nightly",
 	"views.activitybar.title": "Roo Code Nightly",
-	"configuration.title": "Roo Code Nightly"
+	"configuration.title": "Roo Code Nightly",
+	"settings.proxyUrl.description": "Proxy URL used for HTTP/SOCKS requests. Leave empty to disable."
 }
