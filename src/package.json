@@ -439,6 +439,7 @@
 		"pretty-bytes": "^7.0.0",
 		"proper-lockfile": "^4.1.2",
 		"proxy-agent": "^6.5.0",
+		"undici": "^6.21.3",
 		"ps-tree": "^1.2.0",
 		"puppeteer-chromium-resolver": "^24.0.0",
 		"puppeteer-core": "^23.4.0",
